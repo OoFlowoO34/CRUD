@@ -1,0 +1,90 @@
+    <script type="text/javascript" src="js/jquery_3_3_1.js?1_1"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css">
+    <script type="text/javascript" charset="utf8" src="js/datatables.min.js"></script>
+
+    <!-- include libraries BS3 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/popper_1-14-5.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <!-- include summernote -->
+    <link rel="stylesheet" href="summernote/summernote.css">
+
+    <script type="text/javascript" src="summernote/summernote.js"></script>
+    <script type="text/javascript" src="summernote/lang/summernote-fr-FR.js"></script>
+
+
+<script>
+
+        $(document).ready(function(){
+			var myMainHeight= 500;
+			var myMainWidth= 1100;
+			// pour les param?res, voir summernote.js ?partir de la ligne 7320.
+            $('.summernote').summernote({
+                maxWidth: myMainWidth,
+                maxHeight: myMainHeight,
+                lang: "fr-FR",
+                width: myMainWidth, 
+                height: myMainHeight,
+				toolbar: [
+					['style', ['style', 'bold', 'italic', 'underline']],
+					['font', ['strikethrough']],
+					['style', ['clear']],
+					['fontname', ['fontname']],
+					['fontsize', ['fontsize']],
+					['color', ['color']],
+					['para', ['ul', 'ol', 'paragraph']],
+					['height', ['height']], 
+					['table', ['table']], 
+					['link', ['link']], 
+					['picture', ['picture']], 
+					['video', ['video']], 
+					['hr', ['hr']], 
+					['codeview', ['codeview']], 
+					['undo', ['undo']], 
+					['redo', ['redo']]
+				], 
+				fontNames: [
+					'Arial', 'Arial Black', 'Verdana'
+				]
+			});
+			// je remplis ?entuellement le textarea 
+		constructTable();
+		// Vide le summernote
+		$('#summernote').summernote("code", "");
+		$('#myTable').DataTable({
+		     "language": {
+		    "sProcessing": "Traitement en cours ...",
+		    "sLengthMenu": "Afficher _MENU_ lignes",
+		    "sZeroRecords": "Aucun résultat trouvé",
+		    "sEmptyTable": "Aucune donnée disponible",
+		    "sInfo": "Lignes _START_ à _END_ sur _TOTAL_",
+		    "sInfoEmpty": "Aucune ligne affichée",
+		    "sInfoFiltered": "(Filtrer un maximum de_MAX_)",
+		    "sInfoPostFix": "",
+		    "sSearch": "Chercher:",
+		    "sUrl": "",
+		    "sInfoThousands": ",",
+		    "sLoadingRecords": "Chargement...",
+		    "oPaginate": {
+		      "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
+		    },
+		    "oAria": {
+		      "sSortAscending": ": Trier par ordre croissant", "sSortDescending": ": Trier par ordre décroissant"
+		    }
+		  }
+		});
+    });
+
+// exemple pour remplir le summernote en édition :
+$('#summernote').summernote("code", "Coucou<br>C'est JiJou");
+</script>
+
+
+<body>
+<textarea id="summernote" name="summernote" class="summernote"></textarea>
+</body>

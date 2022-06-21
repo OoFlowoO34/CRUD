@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TP FORMULAIRE</title>
+		<meta charset="utf-8">
+		<meta name="description" content="TP FORMULAIRE">
+		<!-- For Internet Explhorreur : to force css3 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Tablettes 'n' Mobiles -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- main css and js -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script type="text/javascript" src="jquery_3_3_1.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	    <link rel="stylesheet" type="text/css" href="datatables.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+    	<script type="text/javascript" charset="utf8" src="datatables.min.js"></script>
+	<!-- main css and js -->		
+	</head>
+
+<body>
+
+	<div id="page">
+		<header><h1>Tableau de fonctions JS et JQ</h1></header>
+
+		<nav><!-- Nav. principale de la page --></nav>
+
+		<aside><!-- Les à-cotés de la page --></aside>
+
+		<!-- Contenu textuel de la page -->
+		<section>
+
+
+					<!-- 
+									<div id="table_personnes_wrapper" class="dataTables_wrapper no-footer">
+				<div class="dataTables_length" id="table_personnes_length">
+					<label>
+						<select name="table_personnes_length" aria-controls="table_personnes" class="">
+							<option value="10">Dix</option>
+							<option value="25">Vingt cinq</option>
+							<option value="50">Cinquante</option>
+							<option value="100">Cent</option>
+							<option value="-1">Ze total stp</option>
+						</select> Utilisateurs par page</label>
+					</div>
+					<div id="table_personnes_filter" class="dataTables_filter">
+						<label>Rechercher : 
+							<input type="search" class="" placeholder="" aria-controls="table_personnes"></label>
+					</div>
+					 -->
+			<table id="table_personnes"  class="table table-grey table-striped">
+			</table>
+
+			<!-- 			<div class="dataTables_info" id="table_personnes_info" role="status" aria-live="polite">Utilisateurs 0 à 0 sur 0 sélectionnée</div>
+			<div class="dataTables_paginate paging_simple_numbers" id="table_personnes_paginate">
+				<a class="paginate_button previous disabled" aria-controls="table_personnes" data-dt-idx="0" tabindex="0" id="table_personnes_previous">Précédent</a>
+				<span></span>
+				<a class="paginate_button next disabled" aria-controls="table_personnes" data-dt-idx="1" tabindex="0" id="table_personnes_next">Suivant</a>
+			</div></div> -->
+
+<div id="toggles">
+	<div>			
+		<span>++</span>
+		<label class="switch">
+			<input onClick="constructTable_plusplus()" id="toggle_plusplus" type="checkbox">
+			<span class="slider round"></span>
+		  </label></div>
+	<div>
+		<span>+</span>
+		<label class="switch">
+		  <input onClick="constructTable_plus()" type="checkbox">
+		  <span class="slider round"></span>
+		</label>
+	</div>
+</div>
+
+
+
+
+
+			<p>Javascript : <input type="text" name="prenom" id="javascript"></p>
+			<p>JQuery : <input type="text" name="nom" id="jquery"></p>
+			<p>Utilité : <input type="text" name="age" id="utilite"></p>
+			<p>Explication Javascript : <input type="text" name="telephone" id="input_js"></p>
+			<p>Explication JQuery : <input type="text" name="telephone" id="input_jq"></p>
+			
+			<p>
+				
+				<button onClick="ajoutPersonne()" class="btn_action" id="btn_ajouter">AJOUTER</button>
+				&nbsp;&nbsp;&nbsp;
+				<button onClick="majPersonne()" class="btn_action hide" id="btn_modifier">MODIFIER</button>
+				&nbsp;&nbsp;&nbsp;
+				<button onClick="annulPersonne()" class="btn_save hide" id="btn_annuler">ANNULER</button>
+			</p>
+			
+		</section>
+
+		<footer><!-- Pied-de-page de la page --></footer>
+	</div>
+
+</body>
+</html>
+
